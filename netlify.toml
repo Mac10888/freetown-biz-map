@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build --prefix client"
-  publish = "client/build"
+  base = "client"
+  command = "npm run build"
+  publish = "build"
 
 [[redirects]]
   from = "/*"
