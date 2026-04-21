@@ -8,11 +8,16 @@ import './App.css';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-const supabase = supabaseUrl && supabaseAnonKey 
-  ? createClient(supabaseUrl, supabaseAnonKey)
-  : null;
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Supabase credentials not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env.');
+}
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN || 'pk.eyJ1IjoibWFjMTA4ODgiLCJhIjoiY21sNzB1OGZ6MGtpZjNmc2YwMzZvcnY1eiJ9.0SqIx9oVqlvYGF2tWtccwA';
+const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+if (!mapboxToken) {
+  throw new Error('Mapbox token is missing. Set VITE_MAPBOX_TOKEN in your .env.');
+}
+mapboxgl.accessToken = mapboxToken;
 
 function App() {
   const mapContainer = useRef(null);

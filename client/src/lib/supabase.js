@@ -1,5 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
-export const supabase = createClient(
-  'https://eukfjmahrtrslixolgah.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1a2ZqbWFocnRyc2xpeG9sZ2FoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAzMzIyMDMsImV4cCI6MjA4NTkwODIwM30.VSQu087japuf1_3LhFxgVFenWAPVabS42aiSqqEXM5Q'
-);
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+let _supabase = null;
+export function getSupabaseClient() {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Supabase credentials not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env.');
+  }
+  if (!_supabase) {
+    _supabase = createClient(supabaseUrl, supabaseAnonKey);
+  }
+  return _supabase;
+}

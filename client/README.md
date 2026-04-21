@@ -1,3 +1,14 @@
+# Environment Variables
+
+This project uses Vite-style environment variables. Create a `.env` file in the `client/` directory based on `.env.example`:
+
+```
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_MAPBOX_TOKEN=your-mapbox-token
+```
+
+Do NOT commit secrets to version control. Set secrets in your deployment environment (e.g., Render, Netlify, Vercel) or use a secrets manager.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

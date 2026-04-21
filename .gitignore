@@ -1,0 +1,2 @@
+# Ignore server secrets
+/server/.env
