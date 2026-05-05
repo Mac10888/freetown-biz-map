@@ -22,6 +22,139 @@ body, html {
   height: 100vh;
 }
 
+.business-popup {
+  color: #1e293b;
+  min-width: 220px;
+}
+
+.business-popup h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.business-popup p {
+  margin: 0 0 12px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.business-popup__meta {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.business-popup__meta span {
+  border-radius: 8px;
+  background: #f1f5f9;
+  padding: 6px 8px;
+}
+
+.business-popup img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+.category-strip {
+  max-height: 118px;
+  overflow-y: auto;
+}
+
+.share-button {
+  min-width: 72px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+
+  .app-header h1 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+  }
+
+  .app-header p {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+
+  .search-panel {
+    top: 118px !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+
+  .search-panel input {
+    padding: 12px !important;
+    font-size: 15px !important;
+    border-radius: 14px !important;
+  }
+
+  .category-strip {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: none;
+    padding: 8px !important;
+    scrollbar-width: thin;
+  }
+
+  .category-strip button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .admin-panel {
+    top: auto !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+    max-height: 72vh !important;
+    padding: 16px !important;
+    transform: none !important;
+  }
+
+  .admin-panel h3 {
+    font-size: 20px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .stats-panel {
+    left: 10px !important;
+    bottom: 10px !important;
+    max-width: min(240px, calc(100vw - 120px)) !important;
+    padding: 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .share-button {
+    right: 10px !important;
+    bottom: 10px !important;
+    min-width: 82px;
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .mapboxgl-ctrl-bottom-right {
+    bottom: 72px !important;
+    right: 10px !important;
+  }
+}
+
 .App {
   text-align: center;
 }
